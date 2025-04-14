@@ -1,13 +1,12 @@
 import React from "react";
-import classes from "../Auth/Signup.module.css";
 import Layout from "../../Components/Layout/Layout";
 
-function Signup() {
+function Payment() {
   return (
     <Layout>
-      <div>Signup</div>
+      <div>Payment</div>
     </Layout>
   );
 }
 
-export default Signup;
+export default Payment;
