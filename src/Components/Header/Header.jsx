@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "../Header/Header.module.css";
 import { Link } from "react-router-dom";
 import { TiLocation } from "react-icons/ti";
 import { IoIosSearch } from "react-icons/io";
 import { LiaCartArrowDownSolid } from "react-icons/lia";
 import LowerHeader from "./LowerHeader";
+import { DataContext } from "../DataProvider/DataProvider";
 
 const Header = () => {
+  const [{ basket }, dispatch] = useContext(DataContext);
+  const totalItem = basket?.reduce((amount, item) => {
+    return item.amount + amount;
+  }, 0);
+
   return (
-    <>
+    <section className={classes.fixed}>
       <section>
         <div className={classes.header_container}>
           {/* logo section  */}
@@ -65,13 +71,13 @@ const Header = () => {
             {/* cart */}
             <Link to="/cart" className={classes.cart}>
               <LiaCartArrowDownSolid size={35} />
-              <span>0</span>
+              <span>{totalItem}</span>
             </Link>
           </div>
         </div>
       </section>
       <LowerHeader />
-    </>
+    </section>
   );
 };
 

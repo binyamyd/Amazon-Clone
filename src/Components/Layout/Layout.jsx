@@ -4,7 +4,7 @@ import Header from "../../Components/Header/Header";
 function Layout({ children }) {
   return (
     <>
-      ,<Header />
+      <Header />
       {children}
     </>
   );

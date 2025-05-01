@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import categoryInfos from "../Category/categoryFullInfos";
 import CategoryCard from "./CategoryCard";
 import classes from "../Category/Category.module.css";
